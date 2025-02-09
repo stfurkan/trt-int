@@ -30,3 +30,6 @@
 
 # vercel
 **/.vercel
+
+#logs
+**/*.log
