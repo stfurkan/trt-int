@@ -4,6 +4,15 @@ import { notFound } from 'next/navigation';
 import { ArticleCard } from '@/components/article-card';
 import { cn } from '@/lib/utils';
 
+interface PageProps {
+  params: {
+    lang: string;
+  };
+  searchParams: {
+    page?: string;
+  };
+}
+
 interface Article {
   id: string;
   type: 'article' | 'video';
@@ -93,13 +102,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function NewsPage({
-  params,
-  searchParams
-}: {
-  params: { lang: string };
-  searchParams: { page?: string };
-}) {
+export default async function NewsPage({ params, searchParams }: PageProps) {
   const { lang } = await params;
   const { page } = await searchParams;
 
