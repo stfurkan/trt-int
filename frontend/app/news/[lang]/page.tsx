@@ -5,12 +5,12 @@ import { ArticleCard } from '@/components/article-card';
 import { cn } from '@/lib/utils';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     lang: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     page?: string;
-  };
+  }>;
 }
 
 interface Article {
@@ -59,7 +59,7 @@ async function getContent(lang: string, page = 1) {
 export async function generateMetadata({
   params
 }: {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
   const currentLanguage = getLanguageByCode(lang);
