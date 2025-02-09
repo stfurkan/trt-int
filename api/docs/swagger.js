@@ -12,6 +12,10 @@ const swaggerDefinition = {
     {
       url: 'http://localhost:3001',
       description: 'Development server'
+    },
+    {
+      url: 'https://trt-int.onrender.com',
+      description: 'Production server'
     }
   ],
   tags: [
