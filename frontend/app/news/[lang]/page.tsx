@@ -3,6 +3,7 @@ import { LanguageSelector } from '@/components/ui/language-selector';
 import { notFound } from 'next/navigation';
 import { ArticleCard } from '@/components/article-card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 interface PageProps {
   params: Promise<{
@@ -168,7 +169,7 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
             {isRTL ? (
               <>
                 {currentPage < content.total_pages && (
-                  <a
+                  <Link
                     href={`/news/${currentLanguage.code}?page=${
                       currentPage + 1
                     }`}
@@ -188,7 +189,7 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                         d='M15 19l-7-7 7-7'
                       />
                     </svg>
-                  </a>
+                  </Link>
                 )}
 
                 {/* Page numbers */}
@@ -220,7 +221,7 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                     }
 
                     return (
-                      <a
+                      <Link
                         key={pageNumber}
                         href={`/news/${currentLanguage.code}?page=${pageNumber}`}
                         className={cn(
@@ -234,13 +235,13 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                         aria-current={isCurrentPage ? 'page' : undefined}
                       >
                         {pageNumber}
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
 
                 {currentPage > 1 && (
-                  <a
+                  <Link
                     href={`/news/${currentLanguage.code}?page=${
                       currentPage - 1
                     }`}
@@ -260,13 +261,13 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                         d='M9 5l7 7-7 7'
                       />
                     </svg>
-                  </a>
+                  </Link>
                 )}
               </>
             ) : (
               <>
                 {currentPage > 1 && (
-                  <a
+                  <Link
                     href={`/news/${currentLanguage.code}?page=${
                       currentPage - 1
                     }`}
@@ -286,7 +287,7 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                         d='M15 19l-7-7 7-7'
                       />
                     </svg>
-                  </a>
+                  </Link>
                 )}
 
                 {/* Page numbers */}
@@ -318,7 +319,7 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                     }
 
                     return (
-                      <a
+                      <Link
                         key={pageNumber}
                         href={`/news/${currentLanguage.code}?page=${pageNumber}`}
                         className={cn(
@@ -332,13 +333,13 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                         aria-current={isCurrentPage ? 'page' : undefined}
                       >
                         {pageNumber}
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
 
                 {currentPage < content.total_pages && (
-                  <a
+                  <Link
                     href={`/news/${currentLanguage.code}?page=${
                       currentPage + 1
                     }`}
@@ -358,7 +359,7 @@ export default async function NewsPage({ params, searchParams }: PageProps) {
                         d='M9 5l7 7-7 7'
                       />
                     </svg>
-                  </a>
+                  </Link>
                 )}
               </>
             )}
