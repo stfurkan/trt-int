@@ -1,0 +1,29 @@
+{
+  "name": "trt-int-api",
+  "version": "1.0.0",
+  "description": "Universal Content API for TRT multilingual content",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "redis": "^4.6.7",
+    "express-rate-limit": "^7.1.5",
+    "winston": "^3.11.0",
+    "compression": "^1.7.4",
+    "helmet": "^7.1.0",
+    "swagger-ui-express": "^5.0.0",
+    "swagger-jsdoc": "^6.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0"
+  }
+}
